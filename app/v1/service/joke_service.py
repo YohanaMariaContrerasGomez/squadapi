@@ -15,3 +15,32 @@ def create_joke(joke: joke_schema.JokeBase):
         id = db_joke.id,
         texto = db_joke.texto
     )
+
+
+def update_joke(joke_id:int, texto: str):
+    joke = JokeModel.filter((JokeModel.id == joke_id)).first()
+
+    if not joke:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Joke not found"
+        )
+    
+    joke.texto = texto
+    joke.save()
+    
+    return joke_schema.Joke(
+        id = joke.id,
+        texto = joke.texto
+    )
+
+def delete_joke(joke_id:int):
+    joke = JokeModel.filter((JokeModel.id == joke_id)).first()
+
+    if not joke:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Joke not found"
+        )
+    
+    joke.delete_instance()
