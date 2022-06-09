@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
+from app.v1.router.joke_router import router as joke_router
+
 app = FastAPI()
 
 
-@app.get('/')
-def home():
-    return {"message": "Hello World"}
+app.include_router(joke_router)
