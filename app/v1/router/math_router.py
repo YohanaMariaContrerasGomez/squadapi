@@ -13,7 +13,8 @@ router = APIRouter(prefix="/api/v1",  tags=["numbers"])
 def get_plus_one(
     number: int = Path(
          ...,
-         gt=0
+         gt=0,
+         example=66
      )):
     """
     ## Get Plus one
@@ -37,7 +38,8 @@ def get_plus_one(
 )
 def get_plus_one(
     numbers: str = Path(
-         ...
+         ...,
+         example="2,4,8,16,32,64,7"
      )):
 
     """

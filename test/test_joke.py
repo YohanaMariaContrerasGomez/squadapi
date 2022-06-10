@@ -1,4 +1,3 @@
-from pydoc import cli
 from fastapi.testclient import TestClient
 from main import app
 
@@ -17,6 +16,7 @@ def test_create_joke_ok():
     data = response.json()
     assert data['texto'] == joke['texto']
 
+
 def test_get_joke_ok():
     client = TestClient(app)
 
@@ -24,4 +24,3 @@ def test_get_joke_ok():
         '/api/v1/joke/'
     )
     assert response.status_code == 200
-    data = response.json()
