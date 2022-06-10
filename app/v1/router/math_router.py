@@ -1,5 +1,7 @@
+from turtle import st
 from fastapi import APIRouter, Path
 from fastapi import status
+from typing import List
 
 from app.v1.service import math_service
 
@@ -30,14 +32,14 @@ def get_plus_one(
     }
 
 
-# @router.get(
-#     "/numbers/{numbers}",
-#     status_code=status.HTTP_200_OK,
-#     summary=""
-# )
-# def get_plus_one(
-#     numbers: str = Path(
-#          ...
-#      )):
+@router.get(
+    "/numbers/{numbers}",
+    status_code=status.HTTP_200_OK,
+    summary="Get LCM from an integer list of numbers"
+)
+def get_plus_one(
+    numbers: str = Path(
+         ...
+     )):
 
-#     math_service.CalculateMCM(numbers)
+    return math_service.CalculateLCM(numbers)

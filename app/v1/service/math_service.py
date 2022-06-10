@@ -1,4 +1,5 @@
 import functools
+from math import lcm
 
 def CalculateMCM(listNumbers):
     numbers = [int(i) for i in listNumbers.split(',')]
@@ -23,3 +24,6 @@ def CalculateMCM(listNumbers):
             break
 
     return functools.reduce(lambda a, b: a*b, mcmList)
+
+def CalculateLCM(listNumbers):
+    pass
