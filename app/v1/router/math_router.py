@@ -28,7 +28,7 @@ def get_plus_one(
     - Given number plus one
     """
     return {
-        'msg': number + 1
+        'number_plus_one': number + 1
     }
 
 
@@ -42,4 +42,18 @@ def get_plus_one(
          ...
      )):
 
-    return math_service.CalculateLCM(numbers)
+    """
+    ## Get LCM from an integer list of numbers
+
+    ### Args
+    The app can recive next fields into a JSON
+    - numbers:  Given integer an positive numbers list
+
+    ### Returns
+    - Lcm for the given list
+    """
+
+    lcm = math_service.CalculateLCM(numbers)
+    return {
+        'least_common_multiple': lcm
+    }
