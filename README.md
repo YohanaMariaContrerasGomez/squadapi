@@ -32,12 +32,11 @@ Python FastAPI Create, read, update and delete (CRUD) using PostgreSQL,
   * reemplazar los valores de autenticación y conexión a la base de datos en el archivo **.env**
 
    ```py
-    Database connection
-    DB_NAME=to_do_list
-    DB_USER=my-user
-    DB_PASS=my-pass
-    DB_HOST=localhost
-    DB_PORT=5432`
+  DB_NAME=squad
+  DB_USER=postgres
+  DB_PASS=admin
+  DB_HOST=localhost
+  DB_PORT=5432
   ```
 
 3.  ejecutar script, en la terminal
@@ -50,6 +49,16 @@ Python FastAPI Create, read, update and delete (CRUD) using PostgreSQL,
   ```py
   create_tables()
   ```
+
+## Test
+
+Para verificar que funcionan nuestros tests, vamos a la terminal y en la raíz de nuestro proyecto lanzamos el siguiente comando:
+
+```
+pytest
+```
+
+Si todo ha ido bien, nos aparecerá un mensaje en la consola afirmando que todos los tests han pasado.
 
 ## ¿Qué repositorio utilizarías?
 
