@@ -1,7 +1,5 @@
-from turtle import st
 from fastapi import APIRouter, Path
 from fastapi import status
-from typing import List
 
 from app.v1.service import math_service
 
